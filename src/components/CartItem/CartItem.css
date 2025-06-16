@@ -1,0 +1,42 @@
+.cart-item {
+  display: flex;
+  gap: 2.5rem;
+  text-transform: uppercase;
+}
+
+.cart-item__title {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.cart-item__image {
+  max-width: 262px;
+  object-fit: contain;
+}
+
+.cart-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 2.5rem 0;
+}
+
+.cart-item__text {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  gap: 0.5rem;
+}
+
+.cart-item__remove {
+  font-size: 0.75rem;
+  color: red;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  justify-self: end;
+}

@@ -1,0 +1,34 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+.cart-title {
+  margin-bottom: 2rem;
+}
+
+.cart-content {
+  flex-grow: 1;
+}
+
+.cart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cart-summary {
+  padding: 1.5rem 0 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cart-summary__total {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
