@@ -9,27 +9,23 @@
 }
 
 .similar-phones__list {
+  width: 100%;
   display: grid;
   padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  padding-left: 0;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(200px, 1fr);
+  grid-auto-columns: minmax(344px, 1fr);
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: #00000033 transparent;
-  border-bottom: 1px solid #ccc;
   align-items: stretch;
 }
 
 .similar-phones__list::-webkit-scrollbar {
-  height: 4px;
-}
-
-.similar-phones__list::-webkit-scrollbar-track {
-  background: transparent;
+  width: 2px;
+  height: 2px;
+  background-color: #cccccc;
 }
 
 .similar-phones__list::-webkit-scrollbar-thumb {
-  background-color: #00000033;
-  border-radius: 2px;
+  background-color: #000000;
 }

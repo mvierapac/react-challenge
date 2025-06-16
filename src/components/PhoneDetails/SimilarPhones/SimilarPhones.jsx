@@ -7,11 +7,11 @@ export const SimilarPhones = ({ phones }) => {
   return (
     <section className="similar-phones">
       <h2 className="similar-phones__title">Similar items</h2>
-      <div className="similar-phones__list">
+      <ul className="similar-phones__list">
         {phones.map((phone) => (
           <PhoneCard key={phone.id} phone={phone} />
         ))}
-      </div>
+      </ul>
     </section>
   );
 };
