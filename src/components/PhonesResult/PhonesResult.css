@@ -20,6 +20,5 @@
 @media (min-width: 1024px) {
   .phones-list {
     grid-template-columns: repeat(auto-fill, 344px);
-    justify-content: center;
   }
 }

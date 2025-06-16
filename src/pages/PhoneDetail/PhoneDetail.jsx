@@ -3,22 +3,27 @@ import { usePhoneDetail } from "@/hooks/usePhoneDetail";
 import { PhoneOptions } from "@/components/PhoneDetails/PhoneOptions/PhoneOptions";
 import { PhoneSpecs } from "@/components/PhoneDetails/PhoneSpecs/PhoneSpecs";
 import { SimilarPhones } from "@/components/PhoneDetails/SimilarPhones/SimilarPhones";
+import { useLoading } from "@/hooks/useLoading";
+import { LoadingBar } from "@/components/LoadingBar/LoadingBar";
 import "./PhoneDetail.css";
 
 export const PhoneDetail = () => {
   const { id } = useParams();
-  const { phone, loading, error } = usePhoneDetail(id);
+  const { phone, loading } = usePhoneDetail(id);
+  const { reveal, progress } = useLoading(loading, !!phone, { once: false });
 
   const similarPhones = phone ? phone.similarProducts : [];
 
-  if (!phone) return <p>Cargando...</p>;
-
   return (
-    <div className="phone-detail">
-      <PhoneOptions phone={phone} />
-
-      <PhoneSpecs specs={phone.specs} />
-      <SimilarPhones phones={similarPhones} />
-    </div>
+    <>
+      <LoadingBar progress={progress} reveal={reveal} />
+      {reveal && phone && (
+        <div className="phone-detail fade-in">
+          <PhoneOptions phone={phone} />
+          <PhoneSpecs specs={phone.specs} />
+          <SimilarPhones phones={similarPhones} />
+        </div>
+      )}
+    </>
   );
 };

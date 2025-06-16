@@ -1,34 +1,35 @@
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
   font-weight: 300;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
   border: none;
+  min-width: 260px;
 }
 
+.btn--md {
+  padding: 1rem 1.5rem;
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* Color variant */
 .btn--black {
-  background-color: black;
+  background-color: #000000;
   color: white;
 }
 
-.btn--black:hover {
-  background-color: #222;
-}
-
 .btn--white {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #1b1a18;
 }
 
-.btn--white:hover {
-  background-color: #f3f3f3;
-}
-
-.btn:disabled,
-.btn--disabled {
+/* Disabled */
+.btn--disabled,
+.btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

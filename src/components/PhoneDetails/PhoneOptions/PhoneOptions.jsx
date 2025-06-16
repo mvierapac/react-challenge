@@ -18,7 +18,6 @@ export const PhoneOptions = ({ phone }) => {
   const { dispatch } = useCartContext();
 
   const handleAddToCart = () => {
-    console.log(selectedStorage);
     dispatch({
       type: "ADD_TO_CART",
       payload: {
@@ -57,7 +56,7 @@ export const PhoneOptions = ({ phone }) => {
           />
         </div>
 
-        <Button disabled={!canAdd} onClick={handleAddToCart}>
+        <Button disabled={!canAdd} onClick={handleAddToCart} fullWidth={true}>
           {"Añadir"}
         </Button>
       </div>

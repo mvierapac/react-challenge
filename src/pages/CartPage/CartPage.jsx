@@ -1,5 +1,6 @@
 import { useCartContext } from "@/context/CartContext";
 import { CartItem } from "@/components/CartItem/CartItem";
+import { Button } from "@/components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import "./CartPage.css";
 
@@ -28,19 +29,14 @@ export const CartPage = () => {
       </div>
 
       <section className="cart-summary">
-        <button
-          type="button"
-          className="cart-summary__continue"
-          onClick={handleContinueShopping}
-          aria-label="Return to home page to continue shopping"
-        >
-          Continue Shopping
-        </button>
+        <Button color={"white"} onClick={handleContinueShopping}>
+          {"Continue Shopping"}
+        </Button>
 
         <div className="cart-summary__total">
           <p>Total</p>
           <p>{cartTotal} EUR</p>
-          <button className="cart-summary__pay">PAY</button>
+          <Button>{"PAY"}</Button>
         </div>
       </section>
     </div>
