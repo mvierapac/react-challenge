@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./PhoneCard.css";
 
 export const PhoneCard = ({ phone }) => {
-  console.log(phone);
   return (
     <li className="phone-card">
       <Link to={`/detalle/${phone.id}`} className="phone-card__link">

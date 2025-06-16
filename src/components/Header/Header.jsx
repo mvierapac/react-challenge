@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import { useCartContext } from "@/context/CartContext";
 import logo from "@assets/logo_icon.svg";
 import bag from "@assets/bag_icon.svg";
+import bagActive from "@assets/bag_active.svg";
 import "./Header.css";
 
 export const Header = () => {
+  const { cartCount } = useCartContext();
+  const bagIcon = cartCount > 0 ? bagActive : bag;
+
   return (
     <header className="header">
       <nav className="nav wrapper">
@@ -12,8 +17,8 @@ export const Header = () => {
         </Link>
 
         <Link to="/carrito" className="cart-link" aria-label="Ir al carrito">
-          <img src={bag} alt="carrito" className="" />
-          <span className="cart-count">0</span>
+          <img src={bagIcon} alt="carrito" className="" />
+          <span className="cart-count">{cartCount}</span>
         </Link>
       </nav>
     </header>
