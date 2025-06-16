@@ -1,0 +1,48 @@
+.phone-specs {
+  margin-block: 3rem;
+}
+
+.phone-specs__title {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.phone-specs__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #000;
+}
+
+.phone-specs__table tr {
+  border-bottom: 1px solid #000;
+}
+
+.phone-specs__table {
+  border-collapse: collapse;
+  width: 100%;
+  border-top: 1px solid #000;
+  font-weight: 300;
+}
+
+.phone-specs__label {
+  text-align: left;
+  font-size: 0.875rem;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  vertical-align: top;
+  min-width: 300px;
+  font-weight: 300;
+  width: 300px;
+}
+
+@media (max-width: 599px) {
+  .phone-specs__label {
+    min-width: auto;
+    width: auto;
+  }
+}
+
+.phone-specs__value {
+  font-size: 0.875rem;
+  padding: 1rem 0;
+}

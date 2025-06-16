@@ -1,0 +1,24 @@
+.storage-selector {
+  display: flex;
+  gap: 0;
+  overflow: hidden;
+}
+
+.storage-option {
+  flex: 1;
+  padding: 1rem;
+  font-size: 0.75rem;
+  border: 1px solid #ccc;
+  border-left: 1px solid transparent;
+  background-color: white;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+.storage-option:first-child {
+  border-left: 1px solid #ccc;
+}
+
+.storage-option.selected {
+  border: 1px solid black;
+}

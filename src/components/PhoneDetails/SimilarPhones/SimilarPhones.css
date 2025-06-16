@@ -1,0 +1,35 @@
+.similar-phones {
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.similar-phones__title {
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.similar-phones__list {
+  display: grid;
+  padding-top: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(200px, 1fr);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #00000033 transparent;
+  border-bottom: 1px solid #ccc;
+  align-items: stretch;
+}
+
+.similar-phones__list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.similar-phones__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.similar-phones__list::-webkit-scrollbar-thumb {
+  background-color: #00000033;
+  border-radius: 2px;
+}

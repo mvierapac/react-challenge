@@ -1,0 +1,29 @@
+.header {
+  padding: 1.5rem 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 74px;
+  height: 24px;
+  display: block;
+}
+
+.cart-link {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+}
+
+.cart-count {
+  position: relative;
+  font-size: 1rem;
+  top: 2px;
+}

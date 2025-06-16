@@ -1,0 +1,17 @@
+.phone-info {
+  padding: 29px;
+}
+
+.phone-name {
+  margin-bottom: 0.75rem;
+}
+
+.phone-price {
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+
+.option-title {
+  font-size: 0.75rem;
+  margin-bottom: 1.25rem;
+}
