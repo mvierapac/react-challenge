@@ -2,7 +2,7 @@
   display: grid;
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 @media (max-width: 599px) {

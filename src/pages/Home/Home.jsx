@@ -22,8 +22,10 @@ export const Home = () => {
 
       {reveal && (
         <div className="home-content fade-in">
-          <SearchBar onSearch={setSearch} />
-          <SearchResults results={totalResults} />
+          <div className="search-bar-sticky">
+            <SearchBar onSearch={setSearch} />
+            <SearchResults results={totalResults} />
+          </div>
           <PhonesResult phones={phones} />
         </div>
       )}

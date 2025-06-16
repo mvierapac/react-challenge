@@ -4,6 +4,12 @@
   gap: 12px;
 }
 
+.search-bar-sticky {
+  position: sticky;
+  top: 4.875rem;
+  background-color: #ffffff;
+  z-index: 9;
+}
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.4s ease forwards;

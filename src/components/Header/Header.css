@@ -1,5 +1,9 @@
 .header {
-  padding: 1.5rem 0;
+  padding: 1.625rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #ffffff;
 }
 
 .nav {

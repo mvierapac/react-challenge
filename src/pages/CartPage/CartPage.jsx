@@ -28,15 +28,36 @@ export const CartPage = () => {
         </section>
       </div>
 
-      <section className="cart-summary">
-        <Button color={"white"} onClick={handleContinueShopping}>
-          {"Continue Shopping"}
+      {/* Desktop layout */}
+      <section className="cart-summary cart-summary--desktop">
+        <Button color="white" onClick={handleContinueShopping}>
+          Continue Shopping
         </Button>
 
-        <div className="cart-summary__total">
-          <p>Total</p>
-          <p>{cartTotal} EUR</p>
-          <Button>{"PAY"}</Button>
+        <div className="cart-summary__right">
+          <span className="cart-summary__total">{`Total ${cartTotal}€`}</span>
+          <Button color="black">PAY</Button>
+        </div>
+      </section>
+
+      {/* Mobile layout */}
+      <section className="cart-summary cart-summary--mobile">
+        <div className="cart-summary__total-row">
+          <span>Total</span>
+          <span>{`${cartTotal}€`}</span>
+        </div>
+
+        <div className="cart-summary__buttons-row">
+          <Button
+            color="white"
+            onClick={handleContinueShopping}
+            style={{ width: "50%" }}
+          >
+            Continue Shopping
+          </Button>
+          <Button color="black" style={{ width: "50%" }}>
+            PAY
+          </Button>
         </div>
       </section>
     </div>

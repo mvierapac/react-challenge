@@ -5,6 +5,7 @@ import { PhoneSpecs } from "@/components/PhoneDetails/PhoneSpecs/PhoneSpecs";
 import { SimilarPhones } from "@/components/PhoneDetails/SimilarPhones/SimilarPhones";
 import { useLoading } from "@/hooks/useLoading";
 import { LoadingBar } from "@/components/LoadingBar/LoadingBar";
+import { BackButton } from "@/components/BackButton/BackButton";
 import "./PhoneDetail.css";
 
 export const PhoneDetail = () => {
@@ -19,6 +20,7 @@ export const PhoneDetail = () => {
       <LoadingBar progress={progress} reveal={reveal} />
       {reveal && phone && (
         <div className="phone-detail fade-in">
+          <BackButton />
           <PhoneOptions phone={phone} />
           <PhoneSpecs specs={phone.specs} />
           <SimilarPhones phones={similarPhones} />

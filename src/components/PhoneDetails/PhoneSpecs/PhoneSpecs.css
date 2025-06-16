@@ -3,7 +3,7 @@
 }
 
 .phone-specs__title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   text-transform: uppercase;
 }
 
@@ -26,7 +26,7 @@
 
 .phone-specs__label {
   text-align: left;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   padding: 1rem 0;
   text-transform: uppercase;
   vertical-align: top;
@@ -43,6 +43,6 @@
 }
 
 .phone-specs__value {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   padding: 1rem 0;
 }
