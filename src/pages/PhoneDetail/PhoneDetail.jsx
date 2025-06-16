@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { usePhoneDetail } from "@/hooks/usePhoneDetail";
-import { PhoneOptions } from "@/components/PhoneDetails/PhoneInfo/PhoneOptions";
+import { PhoneOptions } from "@/components/PhoneDetails/PhoneOptions/PhoneOptions";
 import { PhoneSpecs } from "@/components/PhoneDetails/PhoneSpecs/PhoneSpecs";
 import { SimilarPhones } from "@/components/PhoneDetails/SimilarPhones/SimilarPhones";
 import "./PhoneDetail.css";
