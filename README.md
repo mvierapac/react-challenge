@@ -1,12 +1,47 @@
-# React + Vite
+# Zara Web Challenge – Smartphone Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 🔍 Project Overview
 
-Currently, two official plugins are available:
+This project is a technical challenge for a Frontend position. It is a responsive web application that allows users to browse a list of smartphones, view product details, select options like color and storage, and manage a shopping cart.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔒 Features
 
-## Expanding the ESLint configuration
+- Display a grid of smartphones fetched from an API
+- Detail page for each phone with option selection for color and storage capacity.
+- Responsive design adapted for both mobile and desktop views
+- Cart functionality using React Context and synchronized with `localStorage`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛠️ Technologies Used
+
+- **React**
+- **React Router** for routing (`react-router-dom`)
+- **Vite** as a build tool
+- **Vitest** + **Testing Library** for unit testing
+
+### 📁 Project Structure
+
+- `components/`: Reusable components
+- `context/`: React context for global state management
+- `pages/`: Main application views
+- `services/`: API service functions
+- `hooks/`: Custom React hooks
+
+### 🛠️ Installation & Setup
+
+1. Clone the repository:
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+### 🚀 Deploy
+
+TODO
