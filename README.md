@@ -1,4 +1,4 @@
-# Zara Web Challenge – Smartphone Store
+# React Challenge – Smartphone Store
 
 ### 🔍 Project Overview
 
@@ -44,4 +44,4 @@ This project is a technical challenge for a Frontend position. It is a responsiv
 
 ### 🚀 Deploy
 
-TODO
+- [Live Demo](https://react-challenge-zara.vercel.app/)
