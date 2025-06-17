@@ -29,7 +29,11 @@ This project is a technical challenge for a Frontend position. It is a responsiv
 ### 🛠️ Installation & Setup
 
 1. Clone the repository:
-
+   ```bash
+   git clone https://github.com/mvierapac/react-challenge.git
+   cd react-challenge
+   ```
+   
 2. Install dependencies:
 
    ```sh
