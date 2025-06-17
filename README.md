@@ -46,6 +46,22 @@ This project is a technical challenge for a Frontend position. It is a responsiv
    npm run dev
    ```
 
+### 🧪 Testing
+
+This project uses [Vitest](https://vitest.dev/) and [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/) for unit testing.
+
+Run all tests
+
+```bash
+npm run test
+```
+
+Generate coverage report
+
+```bash
+npm run test -- --coverage
+```
+
 ### 🚀 Deploy
 
 - [Live Demo](https://react-challenge-zara.vercel.app/)
