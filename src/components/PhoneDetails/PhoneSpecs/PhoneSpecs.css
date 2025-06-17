@@ -43,8 +43,8 @@
 
 @media (max-width: 600px) {
   .phone-specs__label {
-    min-width: auto;
-    width: auto;
+    min-width: 160px;
+    width: 160px;
   }
 }
 

@@ -34,15 +34,8 @@ dd {
 }
 
 body {
-  padding-inline: 1rem;
   min-block-size: 100vh;
   line-height: 1.6;
-}
-
-@media (min-width: 1024px) {
-  body {
-    padding-inline: 100px;
-  }
 }
 
 h1,
@@ -155,4 +148,11 @@ body {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.app-container {
+  padding-inline: 100px;
+  @media screen and (max-width: 768px) {
+    padding-inline: 1rem;
+  }
 }

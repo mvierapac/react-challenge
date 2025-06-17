@@ -15,14 +15,14 @@ export const usePhones = (search) => {
   };
 
   useEffect(() => {
-    const getHerosList = async () => {
+    const getPhonesList = async () => {
       setLoading(true);
       const data = await getPhones(search);
       const phonesList = removeDuplicatesById(data);
       setPhones(phonesList);
       setLoading(false);
     };
-    getHerosList();
+    getPhonesList();
   }, [search]);
 
   return {

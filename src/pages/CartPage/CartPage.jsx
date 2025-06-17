@@ -14,7 +14,7 @@ export const CartPage = () => {
   };
 
   return (
-    <div className="cart-page wrapper">
+    <div className="cart-page wrapper app-container">
       <h2 className="cart-title">Cart ({cartCount})</h2>
 
       <div className="cart-content">

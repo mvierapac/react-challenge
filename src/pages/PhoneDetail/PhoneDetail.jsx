@@ -20,9 +20,11 @@ export const PhoneDetail = () => {
       <LoadingBar progress={progress} reveal={reveal} />
       {reveal && phone && (
         <div className="phone-detail fade-in">
-          <BackButton />
-          <PhoneOptions phone={phone} />
-          <PhoneSpecs specs={phone.specs} />
+          <div className="app-container">
+            <BackButton />
+            <PhoneOptions phone={phone} />
+            <PhoneSpecs specs={phone.specs} />
+          </div>
           <SimilarPhones phones={similarPhones} />
         </div>
       )}

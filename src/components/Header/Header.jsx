@@ -10,7 +10,7 @@ export const Header = () => {
   const bagIcon = cartCount > 0 ? bagActive : bag;
 
   return (
-    <header className="header">
+    <header className="header app-container">
       <nav className="nav wrapper">
         <Link to="/" aria-label="Ir al inicio">
           <img src={logo} alt="Logo tienda móviles" className="logo" />

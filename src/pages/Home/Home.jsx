@@ -21,7 +21,7 @@ export const Home = () => {
       <LoadingBar progress={progress} reveal={reveal} />
 
       {reveal && (
-        <div className="home-content fade-in">
+        <div className="home-content app-container fade-in">
           <div className="search-bar-sticky">
             <SearchBar onSearch={setSearch} />
             <SearchResults results={totalResults} />

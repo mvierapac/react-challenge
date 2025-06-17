@@ -3,7 +3,6 @@ import { Header } from "@/components/Header/Header.jsx";
 import { Home } from "@/pages/Home/Home";
 import { PhoneDetail } from "@/pages/PhoneDetail/PhoneDetail";
 import { CartPage } from "@/pages/CartPage/CartPage";
-import "./App.css";
 
 function App() {
   return (

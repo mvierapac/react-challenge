@@ -1,6 +1,7 @@
 .similar-phones {
   margin-top: 4rem;
   padding-bottom: 2rem;
+  padding-left: 100px;
 }
 
 .similar-phones__title {
@@ -21,11 +22,13 @@
 }
 
 .similar-phones__list::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
   background-color: #cccccc;
+  cursor: pointer;
 }
 
 .similar-phones__list::-webkit-scrollbar-thumb {
   background-color: #000000;
+  cursor: pointer;
 }
