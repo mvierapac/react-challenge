@@ -1,5 +1,13 @@
+.phone-options-container {
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
 .phone-info {
   padding: 29px;
+  padding-left: 0;
+  padding-bottom: 2.5rem;
+  font-weight: 300;
 }
 
 .phone-name {
@@ -8,11 +16,12 @@
 }
 
 .phone-price {
-  font-size: 0.875rem;
-  margin-bottom: 2.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 4rem;
 }
 
 .option-title {
-  font-size: 0.75rem;
-  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
 }

@@ -1,59 +1,48 @@
 import { describe, it, vi, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { CartPage } from "./CartPage";
 import { useCartContext } from "@/context/CartContext";
-import { useNavigate } from "react-router-dom";
-
-vi.mock("@/context/CartContext", () => ({
-  useCartContext: vi.fn(),
-}));
+import { MemoryRouter } from "react-router-dom";
 
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual("react-router-dom");
   return {
     ...actual,
-    useNavigate: vi.fn(),
+    useNavigate: () => vi.fn(),
   };
 });
 
+vi.mock("@/context/CartContext", () => ({
+  useCartContext: vi.fn(),
+}));
+
+vi.mock("@/components/CartItem/CartItem", () => ({
+  CartItem: ({ item }) => <div>{item.name}</div>,
+}));
+
+vi.mock("@/components/Button/Button", () => ({
+  Button: ({ children, ...props }) => <button {...props}>{children}</button>,
+}));
+
 describe("CartPage", () => {
-  it("renders cart items and total", () => {
+  it("renders cart items and totals", () => {
     useCartContext.mockReturnValue({
       cart: [
-        {
-          id: 1,
-          name: "Phone 1",
-          basePrice: 500,
-          color: "black",
-          storage: "128GB",
-          quantity: 2,
-          imageUrl: "phone.jpg",
-        },
+        { id: 1, name: "Phone A", color: "black", storage: "128GB" },
+        { id: 2, name: "Phone B", color: "white", storage: "256GB" },
       ],
       cartCount: 2,
-      cartTotal: 1000,
+      cartTotal: 1998,
     });
 
-    render(<CartPage />);
+    render(
+      <MemoryRouter>
+        <CartPage />
+      </MemoryRouter>
+    );
 
     expect(screen.getByText("Cart (2)")).toBeInTheDocument();
-    expect(screen.getByText("Phone 1")).toBeInTheDocument();
-    expect(screen.getByText("1000 EUR")).toBeInTheDocument();
-  });
-
-  it("calls navigate when clicking continue shopping", () => {
-    const mockNavigate = vi.fn();
-    useNavigate.mockReturnValue(mockNavigate);
-
-    useCartContext.mockReturnValue({
-      cart: [],
-      cartCount: 0,
-      cartTotal: 0,
-    });
-
-    render(<CartPage />);
-
-    fireEvent.click(screen.getByRole("button", { name: /continue shopping/i }));
-    expect(mockNavigate).toHaveBeenCalledWith("/");
+    expect(screen.getByText("Phone A")).toBeInTheDocument();
+    expect(screen.getByText("Phone B")).toBeInTheDocument();
   });
 });

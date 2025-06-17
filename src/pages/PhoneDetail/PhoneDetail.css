@@ -5,13 +5,12 @@
   align-items: center;
   padding: 24px 0px;
   width: 100%;
-  max-width: 1200px;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .phone-header {
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    gap: 2.5rem;
   }
 }

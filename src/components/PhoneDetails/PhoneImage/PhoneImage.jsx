@@ -1,12 +1,18 @@
 import "./PhoneImage.css";
 
-export const PhoneImage = ({ option, name }) => {
-  const img = option.imageUrl;
-  const alt = `${name} ${option.name}`;
-
+export const PhoneImage = ({ images, optionSelected, name }) => {
   return (
     <div className="phone-image-wrapper">
-      <img src={img} alt={alt} className="phone-image" />
+      {images.map((image) => (
+        <img
+          key={image.name}
+          src={image.imageUrl}
+          alt={`${name} ${image.name}`}
+          className={`phone-image ${
+            image.name === optionSelected.name ? "phone-image--selected" : ""
+          }`}
+        />
+      ))}
     </div>
   );
 };

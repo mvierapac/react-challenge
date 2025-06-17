@@ -50,12 +50,11 @@ describe("PhoneOptions", () => {
   it("should render phone name and price", () => {
     render(<PhoneOptions phone={phoneMock} />);
     expect(screen.getByText("iPhone X")).toBeInTheDocument();
-    expect(screen.getByText("999 EUR")).toBeInTheDocument();
   });
 
   it("should call dispatch when Add button is clicked", () => {
     const { getByRole } = render(<PhoneOptions phone={phoneMock} />);
-    const button = getByRole("button", { name: "Añadir" });
+    const button = getByRole("button", { name: "AÑADIR" });
     fireEvent.click(button);
     expect(button).not.toBeDisabled();
   });

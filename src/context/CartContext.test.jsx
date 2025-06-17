@@ -123,7 +123,7 @@ describe("CartContext", () => {
     const item = {
       id: "1",
       name: "Phone 1",
-      basePrice: 100,
+      price: 100,
       color: "black",
       storage: "128GB",
       imageUrl: "example.jpg",

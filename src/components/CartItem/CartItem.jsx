@@ -35,7 +35,7 @@ export const CartItem = ({ item }) => {
           <p>
             {item.storage} | {item.color.toUpperCase()}
           </p>
-          <p>{item.basePrice} EUR</p>
+          <p>{item.price} EUR</p>
           <p> Quantity: {item.quantity}</p>
         </div>
         <button onClick={handleRemove} className="cart-item__remove">

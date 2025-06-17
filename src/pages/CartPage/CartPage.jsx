@@ -34,18 +34,22 @@ export const CartPage = () => {
           Continue Shopping
         </Button>
 
-        <div className="cart-summary__right">
-          <span className="cart-summary__total">{`Total ${cartTotal}€`}</span>
-          <Button color="black">PAY</Button>
-        </div>
+        {cartCount > 0 && (
+          <div className="cart-summary__right">
+            <span className="cart-summary__total">{`Total ${cartTotal}€`}</span>
+            <Button color="black">PAY</Button>
+          </div>
+        )}
       </section>
 
       {/* Mobile layout */}
       <section className="cart-summary cart-summary--mobile">
-        <div className="cart-summary__total-row">
-          <span>Total</span>
-          <span>{`${cartTotal}€`}</span>
-        </div>
+        {cartCount > 0 && (
+          <div className="cart-summary__total-row">
+            <span>Total</span>
+            <span>{`${cartTotal}€`}</span>
+          </div>
+        )}
 
         <div className="cart-summary__buttons-row">
           <Button
@@ -55,9 +59,11 @@ export const CartPage = () => {
           >
             Continue Shopping
           </Button>
-          <Button color="black" style={{ width: "50%" }}>
-            PAY
-          </Button>
+          {cartCount > 0 && (
+            <Button color="black" style={{ width: "50%" }}>
+              PAY
+            </Button>
+          )}
         </div>
       </section>
     </div>

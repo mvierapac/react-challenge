@@ -3,16 +3,16 @@ import "./StorageSelector.css";
 export const StorageSelector = ({ options, selected, onSelect }) => {
   return (
     <div className="storage-selector">
-      {options.map(({ capacity }) => (
+      {options.map((option) => (
         <button
-          key={capacity}
+          key={option.capacity}
           className={`storage-option ${
-            selected?.capacity === capacity ? "selected" : ""
+            selected?.capacity === option.capacity ? "selected" : ""
           }`}
-          onClick={() => onSelect({ capacity })}
+          onClick={() => onSelect(option)}
           type="button"
         >
-          {capacity}
+          {option.capacity}
         </button>
       ))}
     </div>

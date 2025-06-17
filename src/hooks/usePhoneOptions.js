@@ -7,7 +7,6 @@ export const usePhoneOptions = (phone) => {
   useEffect(() => {
     if (phone) {
       setSelectedColorOption(phone.colorOptions?.[0]);
-      setSelectedStorage(phone.storageOptions?.[0]);
     }
   }, [phone]);
 

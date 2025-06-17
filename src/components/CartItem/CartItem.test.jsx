@@ -16,7 +16,7 @@ const baseItem = {
   color: "black",
   storage: "128GB",
   imageUrl: "https://example.com/image.jpg",
-  basePrice: 999,
+  price: 999,
   quantity: 1,
 };
 

@@ -5,7 +5,7 @@
   margin: 2.5rem 0;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 600px) {
   .phones-list {
     grid-template-columns: 1fr;
   }

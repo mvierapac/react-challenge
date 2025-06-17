@@ -1,5 +1,11 @@
 .phone-specs {
-  margin-block: 3rem;
+  margin-top: 9.625rem;
+}
+
+@media (max-width: 600px) {
+  .phone-specs {
+    margin-top: 5.5rem;
+  }
 }
 
 .phone-specs__title {
@@ -35,7 +41,7 @@
   width: 300px;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 600px) {
   .phone-specs__label {
     min-width: auto;
     width: auto;

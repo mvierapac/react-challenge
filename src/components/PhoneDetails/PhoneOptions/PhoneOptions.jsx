@@ -23,7 +23,7 @@ export const PhoneOptions = ({ phone }) => {
       payload: {
         id: phone.id,
         name: phone.name,
-        basePrice: phone.basePrice,
+        price: selectedStorage.price,
         color: selectedColorOption.name,
         storage: selectedStorage.capacity,
         imageUrl: selectedColorOption.imageUrl,
@@ -33,31 +33,40 @@ export const PhoneOptions = ({ phone }) => {
   if (!selectedColorOption) return <p>Cargando opciones...</p>;
   return (
     <section className="phone-header">
-      <PhoneImage option={selectedColorOption} name={phone.name} />
-      <div className="phone-info">
-        <h2 className="phone-name">{name}</h2>
-        <p className="phone-price">{basePrice} EUR</p>
+      <PhoneImage
+        images={colorOptions}
+        optionSelected={selectedColorOption}
+        name={phone.name}
+      />
+      <div className="phone-options-container">
+        <div className="phone-info">
+          <h2 className="phone-name">{name}</h2>
+          {!selectedStorage ? (
+            <p className="phone-price">{`From ${basePrice} EUR`}</p>
+          ) : (
+            <p className="phone-price">{`${selectedStorage.price} EUR`}</p>
+          )}
 
-        <div className="option-group">
-          <p className="option-title">STORAGE. HOW MUCH SPACE DO YOU NEED?</p>
-          <StorageSelector
-            options={storageOptions}
-            selected={selectedStorage}
-            onSelect={setSelectedStorage}
-          />
+          <div className="option-group">
+            <p className="option-title">STORAGE. HOW MUCH SPACE DO YOU NEED?</p>
+            <StorageSelector
+              options={storageOptions}
+              selected={selectedStorage}
+              onSelect={setSelectedStorage}
+            />
+          </div>
+
+          <div className="option-group">
+            <p className="option-title">COLOR. PICK YOUR FAVOURITE.</p>
+            <ColorSelector
+              colors={colorOptions}
+              selected={selectedColorOption}
+              onSelect={setSelectedColorOption}
+            />
+          </div>
         </div>
-
-        <div className="option-group">
-          <p className="option-title">COLOR. PICK YOUR FAVOURITE.</p>
-          <ColorSelector
-            colors={colorOptions}
-            selected={selectedColorOption}
-            onSelect={setSelectedColorOption}
-          />
-        </div>
-
         <Button disabled={!canAdd} onClick={handleAddToCart} fullWidth={true}>
-          {"Añadir"}
+          {"AÑADIR"}
         </Button>
       </div>
     </section>

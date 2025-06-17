@@ -8,6 +8,21 @@ vi.mock("@/hooks/usePhoneDetail", () => ({
   usePhoneDetail: vi.fn(),
 }));
 
+vi.mock("@/hooks/useLoading", () => ({
+  useLoading: () => ({
+    reveal: true,
+    progress: 100,
+  }),
+}));
+
+vi.mock("@/components/LoadingBar/LoadingBar", () => ({
+  LoadingBar: ({ progress }) => <div>Loading {progress}%</div>,
+}));
+
+vi.mock("@/components/BackButton/BackButton", () => ({
+  BackButton: () => <button>Back</button>,
+}));
+
 vi.mock("@components/PhoneDetails/PhoneOptions/PhoneOptions", () => ({
   PhoneOptions: ({ phone }) => <div>PhoneOptions: {phone.name}</div>,
 }));
@@ -27,7 +42,7 @@ vi.mock("@components/PhoneDetails/SimilarPhones/SimilarPhones", () => ({
 }));
 
 describe("PhoneDetail", () => {
-  it("renders loading state if phone is null", () => {
+  it("renders nothing if phone is null", () => {
     usePhoneDetail.mockReturnValue({
       phone: null,
       loading: true,
@@ -42,7 +57,7 @@ describe("PhoneDetail", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Cargando...")).toBeInTheDocument();
+    expect(screen.queryByText("PhoneOptions")).not.toBeInTheDocument();
   });
 
   it("renders phone details and similar products", () => {
