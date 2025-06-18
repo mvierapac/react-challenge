@@ -1,4 +1,4 @@
-import { PhoneCard } from "../PhoneCard/PhoneCard";
+import { PhoneCard } from "@/components/PhoneCard/PhoneCard";
 import "./PhonesResult.css";
 
 const PhonesList = ({ phones }) => {

@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import { usePhoneDetail } from "@/hooks/usePhoneDetail";
-import { PhoneOptions } from "@/components/PhoneDetails/PhoneOptions/PhoneOptions";
-import { PhoneSpecs } from "@/components/PhoneDetails/PhoneSpecs/PhoneSpecs";
-import { SimilarPhones } from "@/components/PhoneDetails/SimilarPhones/SimilarPhones";
+import { PhoneOptions } from "@/pages/PhoneDetail/components/PhoneOptions/PhoneOptions";
+import { PhoneSpecs } from "@/pages/PhoneDetail/components/PhoneSpecs/PhoneSpecs";
+import { SimilarPhones } from "@/pages/PhoneDetail/components/SimilarPhones/SimilarPhones";
 import { useLoading } from "@/hooks/useLoading";
 import { LoadingBar } from "@/components/LoadingBar/LoadingBar";
 import { BackButton } from "@/components/BackButton/BackButton";

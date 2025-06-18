@@ -18,7 +18,7 @@ vi.mock("@/hooks/useLoading", () => ({
   }),
 }));
 
-vi.mock("@components/SearchBar/SearchBar", () => ({
+vi.mock("./components/SearchBar/SearchBar", () => ({
   SearchBar: ({ onSearch }) => (
     <input
       placeholder="mock search input"
@@ -27,11 +27,11 @@ vi.mock("@components/SearchBar/SearchBar", () => ({
   ),
 }));
 
-vi.mock("@components/SearchResults/SearchResults", () => ({
+vi.mock("./components/SearchResults/SearchResults", () => ({
   SearchResults: ({ results }) => <p>{results} results</p>,
 }));
 
-vi.mock("@/components/PhonesResult/PhonesResult", () => ({
+vi.mock("./components/PhonesResult/PhonesResult", () => ({
   PhonesResult: ({ phones }) => (
     <ul>
       {phones.map((p) => (

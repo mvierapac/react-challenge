@@ -18,10 +18,10 @@ describe("BackButton", () => {
     navigateMock.mockClear();
   });
 
-  it("calls navigate(-1) on click", () => {
+  it("calls navigate on click", () => {
     render(<BackButton />);
     fireEvent.click(screen.getByRole("button", { name: /back/i }));
-    expect(navigateMock).toHaveBeenCalledWith(-1);
+    expect(navigateMock).toHaveBeenCalledWith("/");
   });
 
   it("renders a visible back button", () => {

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { SearchBar } from "@components/SearchBar/SearchBar";
-import { SearchResults } from "@components/SearchResults/SearchResults";
-import { PhonesResult } from "@/components/PhonesResult/PhonesResult";
+import { SearchBar } from "./components/SearchBar/SearchBar";
+import { SearchResults } from "./components/SearchResults/SearchResults";
+import { PhonesResult } from "./components/PhonesResult/PhonesResult";
 import { usePhones } from "@/hooks/usePhones";
 import { useDebounce } from "@hooks/useDebounce.js";
 import { useLoading } from "@/hooks/useLoading";

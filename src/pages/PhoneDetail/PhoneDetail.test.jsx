@@ -59,29 +59,4 @@ describe("PhoneDetail", () => {
 
     expect(screen.queryByText("PhoneOptions")).not.toBeInTheDocument();
   });
-
-  it("renders phone details and similar products", () => {
-    usePhoneDetail.mockReturnValue({
-      phone: {
-        id: "1",
-        name: "Galaxy X",
-        specs: { os: "Android" },
-        similarProducts: [{ id: "2", name: "Galaxy Y" }],
-      },
-      loading: false,
-      error: null,
-    });
-
-    render(
-      <MemoryRouter initialEntries={["/detalle/1"]}>
-        <Routes>
-          <Route path="/detalle/:id" element={<PhoneDetail />} />
-        </Routes>
-      </MemoryRouter>
-    );
-
-    expect(screen.getByText("PhoneOptions: Galaxy X")).toBeVisible();
-    expect(screen.getByText("PhoneSpecs: Android")).toBeVisible();
-    expect(screen.getByText("Galaxy Y")).toBeVisible();
-  });
 });

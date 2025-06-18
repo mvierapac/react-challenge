@@ -2,7 +2,7 @@ import { vi, describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PhonesResult } from "./PhonesResult";
 
-vi.mock("../PhoneCard/PhoneCard", () => ({
+vi.mock("@/components/PhoneCard/PhoneCard", () => ({
   PhoneCard: ({ phone }) => <li>{phone.name}</li>,
 }));
 

@@ -24,7 +24,8 @@ export const Header = () => {
             aria-label={`Carrito con ${cartCount} producto${
               cartCount === 1 ? "" : "s"
             }`}
-          />{" "}
+          />
+          {cartCount}
         </Link>
       </nav>
     </header>

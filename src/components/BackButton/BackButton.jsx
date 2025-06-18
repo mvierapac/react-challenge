@@ -6,7 +6,7 @@ export const BackButton = () => {
   const navigate = useNavigate();
 
   return (
-    <button className="back-button" onClick={() => navigate(-1)}>
+    <button className="back-button" onClick={() => navigate("/")}>
       <img src={back_icon} alt="" />
       <span className="back-text">BACK</span>
     </button>
