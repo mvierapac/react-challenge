@@ -17,12 +17,13 @@ This project is a technical challenge for a Frontend position. It is a responsiv
 - **React Router** for routing (`react-router-dom`)
 - **Vite** as a build tool
 - **Vitest** + **Testing Library** for unit testing
+- **TanStack Query** for data fetching and caching
 
 ### 📁 Project Structure
 
-- `components/`: Reusable components
+- `components/`: Reusable generic components
 - `context/`: React context for global state management
-- `pages/`: Main application views
+- `pages/`: Main application views and their components
 - `services/`: API service functions
 - `hooks/`: Custom React hooks
 
@@ -44,6 +45,11 @@ This project is a technical challenge for a Frontend position. It is a responsiv
 
    ```sh
    npm run dev
+   ```
+4. (Optional) Create a production build:
+
+   ```bash
+   npm run build
    ```
 
 ### 🧪 Testing
