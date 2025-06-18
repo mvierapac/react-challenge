@@ -8,7 +8,7 @@ describe("SearchBar", () => {
     render(<SearchBar onSearch={() => {}} />);
     expect(
       screen.getByPlaceholderText("Search for a smartphone...")
-    ).toBeInTheDocument();
+    ).toBeVisible();
   });
 
   it("should call onSearch with typed value", async () => {

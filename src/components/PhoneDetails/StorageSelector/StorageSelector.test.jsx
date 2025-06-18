@@ -15,8 +15,8 @@ describe("StorageSelector", () => {
         onSelect={() => {}}
       />
     );
-    expect(screen.getByText("64GB")).toBeInTheDocument();
-    expect(screen.getByText("128GB")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "64GB" })).toBeVisible();
+    expect(screen.getByRole("button", { name: "128GB" })).toBeVisible();
   });
 
   it("should call onSelect when a button is clicked", async () => {
@@ -24,7 +24,7 @@ describe("StorageSelector", () => {
     render(
       <StorageSelector options={options} selected={null} onSelect={onSelect} />
     );
-    await userEvent.click(screen.getByText("128GB"));
+    await userEvent.click(screen.getByRole("button", { name: "128GB" }));
     expect(onSelect).toHaveBeenCalledWith({ capacity: "128GB" });
   });
 
@@ -36,7 +36,7 @@ describe("StorageSelector", () => {
         onSelect={() => {}}
       />
     );
-    const selectedButton = screen.getByText("64GB");
+    const selectedButton = screen.getByRole("button", { name: "64GB" });
     expect(selectedButton.className).toMatch(/selected/);
   });
 });

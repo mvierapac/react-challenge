@@ -18,7 +18,13 @@ export const Header = () => {
 
         <Link to="/carrito" className="cart-link" aria-label="Ir al carrito">
           <img src={bagIcon} alt="carrito" className="" />
-          <span className="cart-count">{cartCount}</span>
+          <span
+            className="cart-count"
+            role="status"
+            aria-label={`Carrito con ${cartCount} producto${
+              cartCount === 1 ? "" : "s"
+            }`}
+          />{" "}
         </Link>
       </nav>
     </header>

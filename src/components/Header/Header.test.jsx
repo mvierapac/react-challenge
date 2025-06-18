@@ -23,12 +23,14 @@ describe("Header", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByAltText(/logo tienda móviles/i)).toBeInTheDocument();
+    expect(screen.getByAltText(/logo tienda móviles/i)).toBeVisible();
     expect(screen.getByAltText(/carrito/i)).toHaveAttribute(
       "src",
       "bag_icon.svg"
     );
-    expect(screen.getByText("0")).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: /carrito con 0 productos/i })
+    ).toBeVisible();
   });
 
   it("should render active bag icon when cart has items", () => {
@@ -44,6 +46,8 @@ describe("Header", () => {
       "src",
       "bag_active.svg"
     );
-    expect(screen.getByText("2")).toBeInTheDocument();
+    expect(
+      screen.getByRole("status", { name: /carrito con 2 productos/i })
+    ).toBeVisible();
   });
 });

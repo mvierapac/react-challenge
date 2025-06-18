@@ -49,7 +49,7 @@ describe("PhoneOptions", () => {
 
   it("should render phone name and price", () => {
     render(<PhoneOptions phone={phoneMock} />);
-    expect(screen.getByText("iPhone X")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /iphone x/i })).toBeVisible();
   });
 
   it("should call dispatch when Add button is clicked", () => {

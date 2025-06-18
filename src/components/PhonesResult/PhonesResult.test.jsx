@@ -13,12 +13,12 @@ describe("PhonesResult", () => {
       { id: 2, name: "Phone 2" },
     ];
     render(<PhonesResult phones={phones} />);
-    expect(screen.getByText("Phone 1")).toBeInTheDocument();
-    expect(screen.getByText("Phone 2")).toBeInTheDocument();
+    expect(screen.getByText("Phone 1")).toBeVisible();
+    expect(screen.getByText("Phone 2")).toBeVisible();
   });
 
   it("should render 'Sin resultados' when no results exist", () => {
     render(<PhonesResult phones={[]} />);
-    expect(screen.getByText("Sin resultados")).toBeInTheDocument();
+    expect(screen.getByText("Sin resultados")).toBeVisible();
   });
 });

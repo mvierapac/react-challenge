@@ -14,9 +14,11 @@ describe("SimilarPhones", () => {
 
   it("should render title and phones", () => {
     render(<SimilarPhones phones={phones} />);
-    expect(screen.getByText("Similar items")).toBeInTheDocument();
-    expect(screen.getByText("Phone One")).toBeInTheDocument();
-    expect(screen.getByText("Phone Two")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /similar items/i })
+    ).toBeVisible();
+    expect(screen.getByText("Phone One")).toBeVisible();
+    expect(screen.getByText("Phone Two")).toBeVisible();
   });
 
   it("should return null when no phones", () => {

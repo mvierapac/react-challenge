@@ -24,8 +24,9 @@ describe("BackButton", () => {
     expect(navigateMock).toHaveBeenCalledWith(-1);
   });
 
-  it("renders text", () => {
+  it("renders a visible back button", () => {
     render(<BackButton />);
-    expect(screen.getByText("BACK")).toBeInTheDocument();
+    const button = screen.getByRole("button", { name: /back/i });
+    expect(button).toBeVisible();
   });
 });

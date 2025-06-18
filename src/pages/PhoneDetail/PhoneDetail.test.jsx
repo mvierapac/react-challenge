@@ -80,8 +80,8 @@ describe("PhoneDetail", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("PhoneOptions: Galaxy X")).toBeInTheDocument();
-    expect(screen.getByText("PhoneSpecs: Android")).toBeInTheDocument();
-    expect(screen.getByText("Galaxy Y")).toBeInTheDocument();
+    expect(screen.getByText("PhoneOptions: Galaxy X")).toBeVisible();
+    expect(screen.getByText("PhoneSpecs: Android")).toBeVisible();
+    expect(screen.getByText("Galaxy Y")).toBeVisible();
   });
 });

@@ -3,9 +3,10 @@ import { describe, it, expect, vi } from "vitest";
 import { Button } from "./Button";
 
 describe("Button", () => {
-  it("renders children correctly", () => {
+  it("renders the button with the correct text", () => {
     render(<Button>Click me</Button>);
-    expect(screen.getByText("Click me")).toBeInTheDocument();
+    const button = screen.getByRole("button", { name: /click me/i });
+    expect(button).toBeVisible();
   });
 
   it("applies color and size classes", () => {

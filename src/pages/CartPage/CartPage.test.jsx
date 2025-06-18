@@ -41,8 +41,8 @@ describe("CartPage", () => {
       </MemoryRouter>
     );
 
-    expect(screen.getByText("Cart (2)")).toBeInTheDocument();
-    expect(screen.getByText("Phone A")).toBeInTheDocument();
-    expect(screen.getByText("Phone B")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /cart \(2\)/i })).toBeVisible();
+    expect(screen.getByText("Phone A")).toBeVisible();
+    expect(screen.getByText("Phone B")).toBeVisible();
   });
 });

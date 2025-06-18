@@ -11,16 +11,26 @@ describe("PhoneSpecs", () => {
 
   it("should render the section title", () => {
     render(<PhoneSpecs specs={mockSpecs} />);
-    expect(screen.getByText("SPECIFICATIONS")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /specifications/i })
+    ).toBeVisible();
   });
 
   it("should render all specification labels and values", () => {
     render(<PhoneSpecs specs={mockSpecs} />);
-    expect(screen.getByText("SCREEN SIZE")).toBeInTheDocument();
-    expect(screen.getByText("6.1 inches")).toBeInTheDocument();
-    expect(screen.getByText("BATTERY")).toBeInTheDocument();
-    expect(screen.getByText("3000mAh")).toBeInTheDocument();
-    expect(screen.getByText("PROCESSOR")).toBeInTheDocument();
-    expect(screen.getByText("A14 Bionic")).toBeInTheDocument();
+    expect(
+      screen.getByRole("columnheader", { name: /screen size/i })
+    ).toBeVisible();
+    expect(screen.getByRole("cell", { name: /6.1 inches/i })).toBeVisible();
+
+    expect(
+      screen.getByRole("columnheader", { name: /battery/i })
+    ).toBeVisible();
+    expect(screen.getByRole("cell", { name: /3000mah/i })).toBeVisible();
+
+    expect(
+      screen.getByRole("columnheader", { name: /processor/i })
+    ).toBeVisible();
+    expect(screen.getByRole("cell", { name: /a14 bionic/i })).toBeVisible();
   });
 });

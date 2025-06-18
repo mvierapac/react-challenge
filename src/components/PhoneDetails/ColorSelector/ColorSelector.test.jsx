@@ -22,7 +22,8 @@ describe("ColorSelector", () => {
     render(
       <ColorSelector colors={colors} selected={colors[0]} onSelect={() => {}} />
     );
-    expect(screen.getByText("Black")).toBeInTheDocument();
+
+    expect(screen.getByText("Black")).toBeVisible();
   });
 
   it("should call onSelect when a color is clicked", async () => {

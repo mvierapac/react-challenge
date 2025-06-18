@@ -21,8 +21,8 @@ describe("PhoneCard", () => {
 
     expect(screen.getByRole("link")).toHaveAttribute("href", "/detalle/1");
     expect(screen.getByAltText("Pixel 7")).toHaveAttribute("src", "pixel7.jpg");
-    expect(screen.getByText("GOOGLE")).toBeInTheDocument();
-    expect(screen.getByText("PIXEL 7")).toBeInTheDocument();
-    expect(screen.getByText("699 EUR")).toBeInTheDocument();
+    expect(screen.getByText("GOOGLE")).toBeVisible();
+    expect(screen.getByText("PIXEL 7")).toBeVisible();
+    expect(screen.getByText("699 EUR")).toBeVisible();
   });
 });

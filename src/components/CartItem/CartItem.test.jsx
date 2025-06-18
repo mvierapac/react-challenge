@@ -27,13 +27,12 @@ describe("CartItem", () => {
 
   it("should render product info", () => {
     render(<CartItem item={baseItem} />);
-    expect(screen.getByText(/iPhone 15/i)).toBeInTheDocument();
-    expect(screen.getByText(/128GB \| BLACK/i)).toBeInTheDocument();
-    expect(screen.getByText(/999 EUR/i)).toBeInTheDocument();
-    expect(screen.getByText(/Quantity: 1/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /eliminar/i })
-    ).toBeInTheDocument();
+
+    expect(screen.getByRole("heading", { name: /iphone 15/i })).toBeVisible();
+    expect(screen.getByText(/128GB \| BLACK/i)).toBeVisible();
+    expect(screen.getByText(/999 EUR/i)).toBeVisible();
+    expect(screen.getByText(/Quantity: 1/i)).toBeVisible();
+    expect(screen.getByRole("button", { name: /eliminar/i })).toBeVisible();
   });
 
   it("should dispatch REMOVE_FROM_CART when quantity is 1", () => {

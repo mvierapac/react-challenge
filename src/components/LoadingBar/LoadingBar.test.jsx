@@ -4,10 +4,9 @@ import { LoadingBar } from "./LoadingBar";
 
 describe("LoadingBar", () => {
   it("renders with correct width when reveal is false", () => {
-    render(<LoadingBar progress={60} reveal={false} />);
     const { container } = render(<LoadingBar progress={60} reveal={false} />);
     const bar = container.querySelector(".loading-bar");
-    expect(bar).toBeInTheDocument();
+    expect(bar).toBeVisible();
     expect(bar).toHaveStyle({ width: "60%" });
   });
 

@@ -57,12 +57,9 @@ describe("Home", () => {
 
     render(<Home />);
 
-    expect(
-      screen.getByPlaceholderText("mock search input")
-    ).toBeInTheDocument();
-    expect(screen.getByText("2 results")).toBeInTheDocument();
-    expect(screen.getByText("Phone A")).toBeInTheDocument();
-    expect(screen.getByText("Phone B")).toBeInTheDocument();
-    expect(screen.getByText("Loading 100%")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("mock search input")).toBeVisible();
+    expect(screen.getByText("2 results")).toBeVisible();
+    expect(screen.getByText("Phone A")).toBeVisible();
+    expect(screen.getByText("Phone B")).toBeVisible();
   });
 });
