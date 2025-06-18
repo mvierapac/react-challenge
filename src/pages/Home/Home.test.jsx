@@ -1,10 +1,10 @@
 import { describe, it, vi, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Home } from "./Home";
-import { usePhones } from "@/hooks/usePhones";
+import { usePhonesQuery } from "@/hooks/usePhonesQuery";
 
-vi.mock("@/hooks/usePhones", () => ({
-  usePhones: vi.fn(),
+vi.mock("@/hooks/usePhonesQuery", () => ({
+  usePhonesQuery: vi.fn(),
 }));
 
 vi.mock("@hooks/useDebounce.js", () => ({
@@ -47,12 +47,12 @@ vi.mock("@/components/LoadingBar/LoadingBar", () => ({
 
 describe("Home", () => {
   it("renders search input, results count, loading bar and phone list", () => {
-    usePhones.mockReturnValue({
-      phones: [
+    usePhonesQuery.mockReturnValue({
+      data: [
         { id: 1, name: "Phone A" },
         { id: 2, name: "Phone B" },
       ],
-      loading: false,
+      isLoading: false,
     });
 
     render(<Home />);

@@ -9,9 +9,4 @@ describe("LoadingBar", () => {
     expect(bar).toBeVisible();
     expect(bar).toHaveStyle({ width: "60%" });
   });
-
-  it("returns null when reveal is true", () => {
-    const { container } = render(<LoadingBar progress={100} reveal={true} />);
-    expect(container.firstChild).toBeNull();
-  });
 });

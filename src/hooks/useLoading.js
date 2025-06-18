@@ -1,18 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useLoading = (loading, hasData, { once = false } = {}) => {
-  const [reveal, setReveal] = useState(false);
+export const useLoading = (loading, hasData) => {
   const [progress, setProgress] = useState(0);
-  const hasRevealedOnce = useRef(false);
+  const [internalLoading, setInternalLoading] = useState(false);
+  const hasShownBarRef = useRef(false);
+
+  const shouldShowBar = !hasShownBarRef.current && loading;
 
   useEffect(() => {
     let interval;
     let timeout;
 
-    const shouldSkip = once && hasRevealedOnce.current;
-
-    if (loading && !shouldSkip) {
-      setReveal(false);
+    if (shouldShowBar) {
+      setInternalLoading(true);
       setProgress(0);
 
       interval = setInterval(() => {
@@ -20,19 +20,22 @@ export const useLoading = (loading, hasData, { once = false } = {}) => {
       }, 20);
     }
 
-    if (!loading && hasData && !shouldSkip) {
+    if (!loading && hasData && internalLoading) {
       setProgress(100);
       timeout = setTimeout(() => {
-        setReveal(true);
-        if (once) hasRevealedOnce.current = true;
-      }, 300);
+        hasShownBarRef.current = true;
+        setInternalLoading(false);
+        setProgress(0);
+      }, 400);
     }
 
     return () => {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, [loading, hasData, once]);
+  }, [loading, hasData, shouldShowBar, internalLoading]);
 
-  return { reveal, progress };
+  const showBar = internalLoading;
+
+  return { progress, showBar };
 };

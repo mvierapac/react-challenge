@@ -1,11 +1,11 @@
 import { describe, it, vi, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { PhoneDetail } from "./PhoneDetail";
-import { usePhoneDetail } from "@/hooks/usePhoneDetail";
+import { usePhoneDetailQuery } from "@/hooks/usePhoneDetailQuery";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 
-vi.mock("@/hooks/usePhoneDetail", () => ({
-  usePhoneDetail: vi.fn(),
+vi.mock("@/hooks/usePhoneDetailQuery", () => ({
+  usePhoneDetailQuery: vi.fn(),
 }));
 
 vi.mock("@/hooks/useLoading", () => ({
@@ -43,7 +43,7 @@ vi.mock("@components/PhoneDetails/SimilarPhones/SimilarPhones", () => ({
 
 describe("PhoneDetail", () => {
   it("renders nothing if phone is null", () => {
-    usePhoneDetail.mockReturnValue({
+    usePhoneDetailQuery.mockReturnValue({
       phone: null,
       loading: true,
       error: null,

@@ -1,8 +1,6 @@
 import "./LoadingBar.css";
 
-export const LoadingBar = ({ progress, reveal }) => {
-  if (reveal) return null;
-
+export const LoadingBar = ({ progress }) => {
   return (
     <div
       className="loading-bar"
